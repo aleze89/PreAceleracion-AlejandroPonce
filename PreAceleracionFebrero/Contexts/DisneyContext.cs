@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PreAceleracionFebrero.Models;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace PreAceleracionFebrero.Contexts
 {
