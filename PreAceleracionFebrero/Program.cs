@@ -13,7 +13,7 @@ builder.Services.AddEntityFrameworkSqlServer();
 builder.Services.AddDbContext<DisneyContext>((services, options) =>
 {
     options.UseInternalServiceProvider(services);
-    options.UseSqlServer("Data Source=DESKTOP-UJVMHBA;Initial Catalog=NUEVA;Integrated Security=True;");
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DisneyConnectionString"));
 });
 
 var app = builder.Build();
