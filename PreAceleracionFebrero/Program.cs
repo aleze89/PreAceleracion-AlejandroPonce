@@ -1,5 +1,5 @@
 using PreAceleracionFebrero.Contexts;
-using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +13,10 @@ builder.Services.AddEntityFrameworkSqlServer();
 builder.Services.AddDbContext<DisneyContext>((services, options) =>
 {
     options.UseInternalServiceProvider(services);
-    options.UseSqlServer("Data Source=DESKTOP-UJVMHBA;Database=DisneyDb;Initial Catalog=NUEVA;Integrated Security=True;");
+    options.UseSqlServer("Data Source=DESKTOP-UJVMHBA;Initial Catalog=NUEVA;Integrated Security=True;");
 });
 
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
